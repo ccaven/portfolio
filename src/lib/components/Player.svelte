@@ -80,10 +80,8 @@
 <T.Group bind:ref={cameraGroup}>
     <T.PerspectiveCamera makeDefault position={[-5, 5, 5]} fov={60} bind:ref={perspectiveCamera}>
         <OrbitControls
-            autoRotate 
             enableZoom={false} 
             enableDamping
-            autoRotateSpeed={0.1}
             maxPolarAngle={Math.PI * 5 / 8}
             minPolarAngle={Math.PI / 8}
             bind:ref={orbitControls}
