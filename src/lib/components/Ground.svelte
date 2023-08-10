@@ -1,9 +1,8 @@
 <script lang="ts">
     import { T } from '@threlte/core';
-    import { Grid, OrbitControls } from '@threlte/extras';
-    import { AutoColliders, Collider, RigidBody } from "@threlte/rapier";
+    import { Grid } from '@threlte/extras';
+    import { AutoColliders, Collider } from "@threlte/rapier";
     import { Text } from '@threlte/extras';
-	import Variable from './Variable.svelte';
 </script>
 
 <T.Group position.y={-1}>
@@ -16,7 +15,7 @@
         <T.Mesh position.y={-2}>
 
             <T.IcosahedronGeometry args={[4, 3]}/>
-            <T.MeshStandardMaterial color="red" flatShading/>
+            <T.MeshStandardMaterial color="purple" flatShading/>
 
         </T.Mesh>
 
@@ -33,16 +32,28 @@
   gridSize={100}
 />
 
-<T.Group position.z={7} rotation.x={-Math.PI/2}>
+<T.Group position.z={10} rotation.x={-Math.PI/2}>
     <Text
-        text={"xacer.dev\nhello there"}
+        text={"    ⬆\n    w\n⬅ a   d ➡\n    s\n    ⬇"}
         color="lightblue"
         fontSize={1}
+        font="Hack-Regular.ttf"
         anchorX="50%"
         anchorY="50%"
     />
 </T.Group>
 
+<T.Group position.z={13.5} rotation.x={-Math.PI/2}>
+    <Text
+        text={"welcome to xacer.dev\n\ni make magic at the intersection\nof 3D and AI"}
+        color="lightblue"
+        fontSize={0.5}
+        font="Hack-Regular.ttf"
+        anchorX="50%"
+        anchorY="0%"
+        textAlign="center"
+    />
+</T.Group>
 
 <T.Group position.z={-7}>
 
@@ -53,7 +64,7 @@
         <AutoColliders shape="cuboid">
             <T.Mesh>
                 <T.BoxGeometry args={[2, rampWidth, 1]}/>
-                <T.MeshStandardMaterial color="red" />
+                <T.MeshStandardMaterial color="orange" />
             </T.Mesh>
         </AutoColliders>
     </T.Group>

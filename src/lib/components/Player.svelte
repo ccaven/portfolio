@@ -62,7 +62,7 @@
 
 </script>
 
-<T.Group position.y={10}>
+<T.Group position.y={10} position.z={10}>
     <RigidBody bind:rigidBody={rigidBody}>
         <AutoColliders shape="ball">
             <T.Mesh>
@@ -74,12 +74,12 @@
 </T.Group>
 
 <T.Group bind:ref={cameraGroup}>
-    <T.PerspectiveCamera makeDefault position={[-1, 1, 1]} fov={60} bind:ref={perspectiveCamera}>
+    <T.PerspectiveCamera makeDefault position={[0, 18, 11]} fov={60} bind:ref={perspectiveCamera}>
         <OrbitControls
             enableDamping
             maxPolarAngle={Math.PI * 7 / 16}
             minPolarAngle={Math.PI / 8}
-            maxDistance={10}
+            maxDistance={15}
             minDistance={2}
             bind:ref={orbitControls}
         />
