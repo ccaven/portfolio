@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { RigidBody as RapierRigidBody } from "@dimforge/rapier3d-compat";
-    import { Vector3, type PerspectiveCamera, type Group } from "three";
+    import { IcosahedronGeometry, Vector3, type PerspectiveCamera, type Group } from "three";
     import type { OrbitControls as ThreeOrbitControls } from 'three/examples/jsm/controls/OrbitControls';
     
     import { T, useFrame, useThrelte } from '@threlte/core';
@@ -12,8 +12,6 @@
     let perspectiveCamera: PerspectiveCamera;
     let cameraGroup: Group;
     let orbitControls: ThreeOrbitControls;
-
-    let { renderer } = useThrelte();
 
     let pressedKeys: { [key: string]: boolean } = {};
 
@@ -64,13 +62,11 @@
 
 </script>
 
-
-
 <T.Group position.y={10}>
     <RigidBody bind:rigidBody={rigidBody}>
         <AutoColliders shape="ball">
             <T.Mesh>
-                <T.SphereGeometry args={[0.25]}/>
+                <T.IcosahedronGeometry args={[0.25, 4]}/>
                 <T.MeshStandardMaterial/>                
             </T.Mesh>
         </AutoColliders>
@@ -78,12 +74,13 @@
 </T.Group>
 
 <T.Group bind:ref={cameraGroup}>
-    <T.PerspectiveCamera makeDefault position={[-5, 5, 5]} fov={60} bind:ref={perspectiveCamera}>
+    <T.PerspectiveCamera makeDefault position={[-1, 1, 1]} fov={60} bind:ref={perspectiveCamera}>
         <OrbitControls
-            enableZoom={false} 
             enableDamping
-            maxPolarAngle={Math.PI * 5 / 8}
+            maxPolarAngle={Math.PI * 7 / 16}
             minPolarAngle={Math.PI / 8}
+            maxDistance={10}
+            minDistance={2}
             bind:ref={orbitControls}
         />
     </T.PerspectiveCamera>
