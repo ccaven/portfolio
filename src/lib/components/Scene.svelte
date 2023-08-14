@@ -4,6 +4,8 @@
     import { AutoColliders, Collider, Debug, RigidBody } from "@threlte/rapier";
 	import Ground from './Ground.svelte';
 	import Player from './Player.svelte';
+	import Exhibit from './Exhibit.svelte';
+	import Center from './Center.svelte';
 </script>
 
 
@@ -11,7 +13,24 @@
 <T.AmbientLight intensity={0.2} />
 
 <Ground />
+<Center />
 <Player />
+
+<Exhibit name="Code Together" position.x={20} position.z={-10}>
+
+</Exhibit>
+
+<Exhibit name="Multiplayer Desmos" position.x={20} position.z={10}>
+
+</Exhibit>
+
+<Exhibit name="Black hole raytracing" position.x={-20} position.z={-10}>
+
+</Exhibit>
+
+<Exhibit name="AI research" position.x={-20} position.z={10}>
+
+</Exhibit>
 
 <!--
 <Float floatIntensity={1} floatingRange={[0, 1]} >

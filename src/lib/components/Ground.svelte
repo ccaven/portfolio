@@ -9,19 +9,6 @@
     <Collider shape="cuboid" args={[100, 1, 100]} friction={999}/>
 </T.Group>
 
-<T.Group>
-    <AutoColliders shape="convexHull" friction={999}>
-
-        <T.Mesh position.y={-2}>
-
-            <T.IcosahedronGeometry args={[4, 3]}/>
-            <T.MeshStandardMaterial color="purple" flatShading/>
-
-        </T.Mesh>
-
-    </AutoColliders>
-</T.Group>
-
 <Grid
   position.y={-0.001}
   cellColor="#ffffff"
@@ -32,13 +19,24 @@
   gridSize={100}
 />
 
-<T.Group position.z={10} rotation.x={-Math.PI/2}>
+<T.Group position.z={10} rotation.x={-Math.PI/2} position.x={-2}>
     <Text
-        text={"    ⬆\n    w\n⬅ a   d ➡\n    s\n    ⬇"}
+        text={"  w\na s d"}
         color="lightblue"
         fontSize={1}
         font="Hack-Regular.ttf"
-        anchorX="50%"
+        anchorX="100%"
+        anchorY="50%"
+    />
+</T.Group>
+
+<T.Group position.z={10} rotation.x={-Math.PI/2} position.x={2}>
+    <Text
+        text={"  ⬆\n⬅ ⬇ ➡"}
+        color="lightblue"
+        fontSize={1}
+        font="Hack-Regular.ttf"
+        anchorX="0%"
         anchorY="50%"
     />
 </T.Group>
@@ -54,21 +52,4 @@
         textAlign="center"
     />
 </T.Group>
-
-<T.Group position.z={-7}>
-
-    <!-- local constant -->
-    {@const rampWidth = 3}
-
-    <T.Group rotation.x={Math.acos(1 / rampWidth)}>
-        <AutoColliders shape="cuboid">
-            <T.Mesh>
-                <T.BoxGeometry args={[2, rampWidth, 1]}/>
-                <T.MeshStandardMaterial color="orange" />
-            </T.Mesh>
-        </AutoColliders>
-    </T.Group>
-
-</T.Group>
-
 
