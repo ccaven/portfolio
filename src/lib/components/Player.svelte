@@ -74,7 +74,7 @@
 </T.Group>
 
 <T.Group bind:ref={cameraGroup}>
-    <T.PerspectiveCamera makeDefault position={[0, 18, 11]} fov={60} bind:ref={perspectiveCamera}>
+    <T.PerspectiveCamera makeDefault position={[0, 25, 11]} fov={60} bind:ref={perspectiveCamera}>
         <OrbitControls
             enableDamping
             maxPolarAngle={Math.PI * 7 / 16}

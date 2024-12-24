@@ -39,6 +39,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@threlte/gltf": "^1.0.1",
     "@types/opentype": "^0.0.4",
     "opentype": "^0.1.2"
   }
